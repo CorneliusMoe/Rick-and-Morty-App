@@ -52,8 +52,7 @@ prevButton.addEventListener("click", () => {
 });
 searchBar.addEventListener("submit", (event) => {
   event.preventDefault();
-  const formData = new FormData(event.target);
-  const searchData = Object.fromEntries(formData);
-  searchQuery = searchData.query;
+  searchQuery = event.target.elements.query.value;
+  page = 1;
   fetchCharacters();
 });
